@@ -75,4 +75,4 @@ This document covers the full process for A2P 10DLC registration and messaging s
 ## This Custom Twilio-Go Package is Created by **[Vikash Parashar](https://github.com/vikash-parashar)**
 ## Resources Link's
 1. [Take a pull from github](https://github.com/vikash-parashar/twl-a2p-auto)
-](https://www.linkedin.com/in/vikash-parashar-3152471ba/)
+](https://www.linkedin.com/in/vikash-parashar-3152471ba)
