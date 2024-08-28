@@ -23,8 +23,3 @@ func (s *A2PService) CreateSubAccount(data SubAccountData) (string, string, erro
 
 	return *resp.Sid, *resp.AuthToken, nil
 }
-
-func (s *A2PService) OnboardCustomer() error {
-	// Step 9.2: Automate Full Onboarding Workflow from creating a subaccount to creating/submitting an A2P campaign
-	return nil
-}

@@ -7,7 +7,7 @@ import (
 	messaging "github.com/twilio/twilio-go/rest/messaging/v1"
 )
 
-// Step 5.1: FetchA2PUseCases fetches the possible A2P campaign use cases for a given brand registration
+// Step 6.1: FetchA2PUseCases fetches the possible A2P campaign use cases for a given brand registration
 // Note : Do not complete this section until the BrandRegistration's status is APPROVED.
 // TODO: need to add logic at the time of creating subaccount to check the status of the BrandRegistration
 func (s *A2PService) FetchA2PUseCases(messagingServiceSid, brandRegistrationSid string) ([]messaging.MessagingV1UsAppToPersonUsecase, error) {
@@ -67,19 +67,19 @@ func (s *A2PService) CreateA2PCampaign(messagingServiceSid string, data Campaign
 }
 
 // Step 10.2: View and Manage A2P Campaigns
-func (s *A2PService) ListA2PCampaigns(messagingServiceSid string) ([]CampaignInfo, error) {
+func (s *A2PService) ListA2PCampaigns(messagingServiceSid string) ([]CampaignData, error) {
 	params := &messaging.ListUsAppToPersonParams{}
 	campaigns, err := s.client.MessagingV1.ListUsAppToPerson(messagingServiceSid, params)
 	if err != nil {
 		return nil, fmt.Errorf("failed to list A2P campaigns: %w", err)
 	}
 
-	var campaignList []CampaignInfo
+	var campaignList []CampaignData
 	for _, campaign := range campaigns {
-		campaignList = append(campaignList, CampaignInfo{
-			Sid:                  *campaign.Sid,
+		campaignList = append(campaignList, CampaignData{
+			SID:                  *campaign.Sid,
 			Description:          *campaign.Description,
-			UseCase:              *campaign.UsAppToPersonUsecase,
+			Usecase:              *campaign.UsAppToPersonUsecase,
 			CampaignStatus:       *campaign.CampaignStatus,
 			BrandRegistrationSid: *campaign.BrandRegistrationSid,
 		})

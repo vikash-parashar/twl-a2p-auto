@@ -76,20 +76,20 @@ func (s *A2PService) AttachEndUserToProfile(data EndUserAssignmentData) (string,
 }
 
 // Step 2.4. Create an EndUser resource of type: authorized_representative_1
-func (s *A2PService) CreateEndUserAuthorizedRep1(data BusinessInfoData) (string, error) {
+func (s *A2PService) CreateEndUserAuthorizedRep1(data EndUserAuthorizedRep1BusinessInfoData) (string, error) {
 	params := &trusthub.CreateEndUserParams{}
 	params.SetAttributes(map[string]interface{}{
-		"business_name":                    data.BusinessName,
-		"social_media_profile_urls":        data.SocialMediaProfileUrls,
-		"website_url":                      data.WebsiteUrl,
-		"business_regions_of_operation":    data.BusinessRegionsOfOperation,
-		"business_type":                    data.BusinessType,
-		"business_registration_identifier": data.BusinessRegistrationId,
-		"business_identity":                data.BusinessIdentity,
-		"business_industry":                data.BusinessIndustry,
-		"business_registration_number":     data.BusinessRegistrationNumber,
+		"business_name":                    data.Rep1BusinessName,
+		"social_media_profile_urls":        data.Rep1SocialMediaProfileUrls,
+		"website_url":                      data.Rep1WebsiteUrl,
+		"business_regions_of_operation":    data.Rep1BusinessRegionsOfOperation,
+		"business_type":                    data.Rep1BusinessType,
+		"business_registration_identifier": data.Rep1BusinessRegistrationId,
+		"business_identity":                data.Rep1BusinessIdentity,
+		"business_industry":                data.Rep1BusinessIndustry,
+		"business_registration_number":     data.Rep1BusinessRegistrationNumber,
 	})
-	params.SetFriendlyName(fmt.Sprintf("%s - Authorized Representative 1 EndUser resource", data.BusinessName))
+	params.SetFriendlyName(fmt.Sprintf("%s - Authorized Representative 1 EndUser resource", data.Rep1BusinessName))
 	params.SetType("authorized_representative_1")
 
 	resp, err := s.client.TrusthubV1.CreateEndUser(params)
