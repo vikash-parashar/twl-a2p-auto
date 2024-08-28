@@ -74,4 +74,4 @@ This document covers the full process for A2P 10DLC registration and messaging s
 
 ## This Custom Twilio-Go Package is Created by **[Vikash Parashar](https://github.com/vikash-parashar)**
 ## Resources Link's
-1. [Twilio SDK](https://www.twilio.com/docs/messaging/compliance/a2p-10dlc/onboarding-isv-api#21-create-a-trustproduct-resource)
+1. [Take a pull from github](https://github.com/vikash-parashar/twl-a2p-auto)
